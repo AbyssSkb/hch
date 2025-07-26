@@ -127,18 +127,16 @@ def main() -> None:
             except CookieExpiredError:
                 get_cookies(config)
                 retries += 1
-
         if time_info is None:
             raise MaxRetriesError()
 
         categories = None
-        while retries < config.max_retries and not categories:
+        while retries < config.max_retries and categories is None:
             try:
                 categories = get_course_categories(time_info, config.cookies)
             except CookieExpiredError:
                 get_cookies(config)
                 retries += 1
-
         if categories is None:
             raise MaxRetriesError()
 

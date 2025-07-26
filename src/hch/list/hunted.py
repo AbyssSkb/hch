@@ -93,7 +93,6 @@ def main():
             except CookieExpiredError:
                 get_cookies(config)
                 retries += 1
-
         if time_info is None:
             raise MaxRetriesError()
 
