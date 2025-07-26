@@ -37,3 +37,7 @@ class GetTimeInfoError(BaseHunterError):
 
 class GetHuntedCourseError(BaseHunterError):
     pass
+
+
+class GetGradeError(BaseHunterError):
+    pass
